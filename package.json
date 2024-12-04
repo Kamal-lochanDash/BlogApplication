@@ -1,0 +1,25 @@
+{
+  "name": "blogapplication",
+  "version": "1.0.0",
+  "description": "Blog App",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamal-lochanDash/BlogApplication.git"
+  },
+  "author": "Kamal Lochan Dash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kamal-lochanDash/BlogApplication/issues"
+  },
+  "homepage": "https://github.com/Kamal-lochanDash/BlogApplication#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7"
+  }
+}
