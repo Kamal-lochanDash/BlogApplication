@@ -1,8 +1,9 @@
 const {Router}=require("express");
-const { handelUserSignup } = require("../controllers/user");
+const { handelUserSignup, handelUserLogin } = require("../controllers/user");
 
 const router=Router();
 
 
-router.get("/signin",handelUserSignup)
+router.get("/signup",handelUserSignup)
+router.get("/login",handelUserLogin)
 module.exports=router;
