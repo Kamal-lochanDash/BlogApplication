@@ -17,7 +17,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: linear-gradient(135deg, #a196ff, #d2d0e7);
+       background: linear-gradient(90deg, #000000, #0048d8);
     }
 
     .signup-container {
@@ -71,7 +71,7 @@
     .form-group button {
       width: 100%;
       padding: 10px;
-      background: #6d5dfc;
+      background: #0048d8;
       color: white;
       border: none;
       font-size: 16px;
@@ -82,7 +82,7 @@
     }
 
     .form-group button:hover {
-      background: #8f88ff;
+      background: #437ff8;
     }
 
     .fade-in {
@@ -122,10 +122,10 @@
 <body>
   <div class="signup-container">
     <h2>Signup</h2>
-    <form id="signupForm">
+    <form id="signupForm"  action="/user/signup" method="POST">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <input type="text" id="name" name="fullName" placeholder="Enter your name" required>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
@@ -139,6 +139,16 @@
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
       </div>
+
+
+      <% if (locals.message) { %>
+        <div class="form-group" style="color: red;">
+          <p><%= message %></p>
+        </div>
+      <% } %>
+
+
+
       <div class="form-group">
         <button type="submit">Sign Up</button>
       </div>
