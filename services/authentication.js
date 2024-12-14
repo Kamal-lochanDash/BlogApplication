@@ -4,7 +4,9 @@ const secreat="$Harrypotter2004#";
 
 function createTokenForUser(user){
     const payload={
+       
         _id:user._id,
+        name:user.fullName,
         email:user.email,
         profileImageURL:user.profileImageURL,
         role:user.role,

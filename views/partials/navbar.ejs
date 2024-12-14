@@ -8,12 +8,42 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/add-blog">Add Blog</a></li> <!-- New Add Blog Link -->
+
+
+            <% if (locals.user) { %>
+              <li><a href="/add-blog">Add Blog</a></li> <!-- New Add Blog Link -->
+              <% } %>
+
+
             <li><a href="/contact">Contact</a></li>
-            <li><a href="/user/login" class="btn-login">Login/Signup</a></li>
+            <% if (!locals.user) { %>
+              <li><a href="/user/login" class="btn-login">Login/Signup</a></li>
+            <% } %>
+
           </ul>
+          <% if (locals.user) { %>
+           
+            <div class="user-profile">
+              <div class="profile-menu" onclick="toggleDropdown()">
+                <img src="/Images/default.png" alt="User Profile" class="profile-pic">
+                <span class="username"><%= user.name %></span>
+              </div>
+              <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/mu/settings">Settings</a></li>
+                  <li>
+                    <form action="/user/logout" method="POST" class="logout-form">
+                      <button type="submit" class="logout-link">Logout</button>
+                    </form>
+                  </li>
+              </ul>
+            </div>
+          <% } %>
         </div>
       </nav>
     </header>
 
+
+    
+    
   

@@ -42,11 +42,16 @@ async function handelPostUserLogin(req,res) {
   
 }
 
+async function handelPostUserLogout(req,res) {
+  res.clearCookie("token").redirect("/")
+}
+
 
 
 module.exports={
     handelUserSignup,
     handelUserLogin,
     handelPostUserSignup,
-    handelPostUserLogin
+    handelPostUserLogin,
+    handelPostUserLogout
 }

@@ -1,5 +1,8 @@
 async function handelHomePage(req,res) {
-    res.render("home");
+console.log(req?.user)
+    res.render("home",{
+        user:req?.user,
+    });
 }
 
 module.exports={

@@ -2,4 +2,27 @@
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 crossorigin="anonymous"
-></script>
+>
+
+//profile
+
+
+</script>
+
+
+<script>
+    function toggleDropdown() {
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      dropdownMenu.classList.toggle("active");
+    }
+  
+    // Close the dropdown menu if clicked outside
+    document.addEventListener("click", (e) => {
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const profileMenu = document.querySelector(".profile-menu");
+  
+      if (!profileMenu.contains(e.target)) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
+  </script>
