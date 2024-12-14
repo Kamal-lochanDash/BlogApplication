@@ -4,7 +4,8 @@ const app=express();
 const userRouter=require("./routes/user")
 const defaultRouter=require("./routes/home")
 const mongoose=require("mongoose");
-const { error } = require("console");
+const cookieParser=require("cookie-parser");
+const { checkForAuthenticationCookie } = require("./middlewares/authentication");
 const PORT=8000;
 mongoose
 .connect('mongodb://localhost:27017/ChroniQ')
@@ -15,6 +16,8 @@ mongoose
 app.set("view engine",'ejs')
 app.set("views",path.resolve("./views"))
 app.use(express.urlencoded({extended:false}))
+app.use(cookieParser());
+app.use(checkForAuthenticationCookie("token"))
 
 app.use("/user",userRouter)
 app.use("/",defaultRouter)

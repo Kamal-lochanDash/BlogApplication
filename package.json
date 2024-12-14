@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kamal-lochanDash/BlogApplication#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",

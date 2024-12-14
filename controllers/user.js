@@ -28,11 +28,12 @@ async function handelPostUserSignup(req,res) {
 }
 
 async function handelPostUserLogin(req,res) {
-  console.log(req.body);
+  //console.log(req.body);
   const {email,password}=req?.body;
   try{
+  
     const token= await User.matchPasswordAndGenerateToken(email,password);
-  console.log(token);
+
   return res.cookie('token',token).redirect("/home");
 
   }catch(error){

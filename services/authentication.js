@@ -15,13 +15,8 @@ function createTokenForUser(user){
 }
 
 function validateToken(token){
-    try{
         const payload=JWT.verify(token,secreat);
         return payload;
-    }catch(error){
-        console.error("Error in tokenValidation", error);
-        return { error: "An unexpected error occurred while validating the token"};
-    }
 }
 
 module.exports={
