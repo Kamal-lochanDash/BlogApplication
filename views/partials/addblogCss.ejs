@@ -1,91 +1,107 @@
 <style>
-
-/* General Body Styles */
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Form Container */
-.modern-form-container {
-  background: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-/* Form Title */
-.modern-form-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333333;
-}
-
-/* Form Group */
-.modern-form-group {
-  margin-bottom: 20px;
-  position: relative;
-}
-
-/* Input Fields */
-.modern-input {
-  width: 100%;
-  padding: 12px 15px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background-color: #f7f7f7;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.modern-input:focus {
-  border-color: #6e8efb;
-  box-shadow: 0 4px 8px rgba(110, 142, 251, 0.2);
-}
-
-/* Submit Button */
-.modern-submit-button {
-  background: #6e8efb;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background 0.3s ease-in-out, transform 0.2s;
-}
-
-.modern-submit-button:hover {
-  background: #4f76e3;
-  transform: translateY(-2px);
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #000000, #0c2d70);
+    color: #333;
+    overflow: hidden; /* Prevents scrolling the page */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Message Section */
+  .message {
+    background: linear-gradient(90deg, #000000, #0c2d70);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
-}
 
+  /* Blog Form Container */
+  .form-container {
+    position: fixed;
+    bottom: 0; /* Fully visible from bottom */
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* Starts offscreen at bottom */
+    width: 70%; /* Leaves 15% gap on each side */
+    background: #ffffff;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    max-height: 90vh; /* Ensures form doesn't exceed viewport height */
+    overflow-y: auto; /* Allows scrolling ONLY if content overflows */
+    opacity: 0; /* Initially hidden */
+    animation: slideInUp 1s ease-out forwards; /* Slower animation */
+  }
 
+  /* Animation to slide the form from the bottom */
+  @keyframes slideInUp {
+    0% {
+      transform: translateX(-50%) translateY(100%); /* Start from below the screen */
+      opacity: 0; /* Invisible at the start */
+    }
+    100% {
+      transform: translateX(-50%) translateY(0); /* End at the normal position */
+      opacity: 1; /* Fully visible */
+    }
+  }
 
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f3d2b;
+  }
 
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f3d2b;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border: 1px solid #4caf50;
+  }
+
+  textarea {
+    resize: none;
+    height: 150px;
+  }
+
+  /* Submit Button */
+  .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0f6ad1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem; /* Extra spacing before the button */
+  }
+
+  .btn-submit:hover {
+    background-color: #3b76ff;
+  }
 </style>

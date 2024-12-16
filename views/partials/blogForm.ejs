@@ -1,46 +1,37 @@
-<form action="/blogs/add" method="POST" enctype="multipart/form-data" class="modern-form-container">
-  <h2 class="modern-form-title">Add a New Blog</h2>
+ <!-- Message Section -->
+ <div class="message">
+  Add your blog details below to get started!
+</div>
 
-  <!-- Blog Title -->
-  <div class="modern-form-group">
-    <input
-      type="text"
-      id="title"
-      name="title"
-      placeholder="Blog Title"
-      class="modern-input"
-      required />
-  </div>
+<!-- Form Section -->
+<div class="form-container" id="formContainer">
+ 
+  <form action="/add-blog" method="POST" enctype="multipart/form-data">
+    <!-- Blog Title -->
+    <div class="form-group">
+      <label for="title">Blog Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter blog title" required>
+    </div>
 
-  <!-- Blog Content -->
-  <div class="modern-form-group">
-    <textarea
-      id="content"
-      name="content"
-      placeholder="Write your blog content here..."
-      rows="6"
-      class="modern-input"
-      required></textarea>
-  </div>
+    <!-- Short Description -->
+    <div class="form-group">
+      <label for="description">Short Description</label>
+      <textarea id="description" name="description" placeholder="Write a short summary..." required></textarea>
+    </div>
 
-  <!-- Category -->
-  <div class="modern-form-group">
-    <select id="category" name="category" class="modern-input">
-      <option value="Technology">Technology</option>
-      <option value="Lifestyle">Lifestyle</option>
-      <option value="Health">Health</option>
-      <option value="Travel">Travel</option>
-      <option value="Education">Education</option>
-    </select>
-  </div>
+    <!-- Content -->
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea id="content" name="content" placeholder="Write your blog content here..." required></textarea>
+    </div>
 
-  <!-- Image Upload -->
-  <div class="modern-form-group">
-    <input type="file" id="image" name="image" class="modern-input" />
-  </div>
+    <!-- Image Upload -->
+    <div class="form-group">
+      <label for="image">Upload Blog Image</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+    </div>
 
-  <!-- Submit Button -->
-  <div class="modern-form-group">
-    <button type="submit" class="modern-submit-button">Publish Blog</button>
-  </div>
-</form>
+    <!-- Submit Button -->
+    <button type="submit" class="btn-submit">Publish Blog</button>
+  </form>
+</div>
