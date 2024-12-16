@@ -3,6 +3,7 @@ const path=require("path");
 const app=express();
 const userRouter=require("./routes/user")
 const defaultRouter=require("./routes/home")
+const blogRoute=require("./routes/blog")
 const mongoose=require("mongoose");
 const cookieParser=require("cookie-parser");
 const { checkForAuthenticationCookie } = require("./middlewares/authentication");
@@ -22,6 +23,7 @@ app.use(checkForAuthenticationCookie("token"))
 
 app.use("/user",userRouter)
 app.use("/",defaultRouter)
+app.use("/blog",blogRoute)
 app.listen(PORT,()=>{
     console.log(`Server started a port ${PORT}`)
 })
