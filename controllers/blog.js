@@ -3,6 +3,12 @@ async function handelgetAddBlog(req,res) {
 }
 
 
+async function handelPostAddBlog(req,res) {
+    console.log(req?.body)
+    return res.end("meow");
+}
+
 module.exports={
     handelgetAddBlog,
+    handelPostAddBlog
 }
