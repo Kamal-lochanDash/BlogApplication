@@ -6,7 +6,12 @@ const blogSchema=new Schema({
         required:true,
     },
 
-    body:{
+    description:{
+        type: String,
+        required:true
+    },
+
+    content:{
         type:String,
         required: true,
     },
