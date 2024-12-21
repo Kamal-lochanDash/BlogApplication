@@ -6,7 +6,7 @@
 <!-- Form Section -->
 <div class="form-container" id="formContainer">
  
-  <form action="/blog/add-blog" method="POST" >
+  <form action="/blog/add-blog" method="POST" enctype="multipart/form-data">
     <!-- Blog Title -->
     <div class="form-group">
       <label for="title">Blog Title</label>
@@ -26,10 +26,10 @@
     </div>
 
     <!-- Image Upload -->
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label for="image">Upload Blog Image</label>
-      <input type="file" id="image" name="image" accept="image/*" required>
-    </div> -->
+      <input type="file" id="image" name="coverImage" accept="image/*" required>
+    </div>
 
     <!-- Submit Button -->
     <button type="submit" class="btn-submit">Publish Blog</button>

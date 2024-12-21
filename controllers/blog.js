@@ -5,6 +5,7 @@ async function handelgetAddBlog(req,res) {
 
 async function handelPostAddBlog(req,res) {
     console.log(req?.body)
+    console.log(req?.file)
     return res.end("meow");
 }
 
