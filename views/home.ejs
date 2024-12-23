@@ -1,16 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <style>
+      /* Main container for the grid and profile section */
+      .main-container {
+        display: grid;
+        grid-template-columns: 70% 30%; /* Left: 70%, Right: 30% */
+        gap: 0.5rem; /* Space between columns */
+        padding: 1rem; /* Padding around the container */
+      }
+    
+      /* Left container for card space */
+      .left-container {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+    
+      .card-grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
+        gap: 2rem; /* Space between card slots */
+      }
+    
+      @media (max-width: 768px) {
+        .card-grid-container {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        }
+    
+        .main-container {
+          grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        }
+    
+        .right-container {
+          margin-top: 1rem; /* Add spacing below the left container */
+        }
+      }
+    
+      @media (max-width: 480px) {
+        .card-grid-container {
+          grid-template-columns: 1fr; /* Single column for small screens */
+        }
+      }
+    
+      /* Right container for profile */
+      .right-container {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+    
+      .profile-section {
+        text-align: center;
+      }
+    
+      .profile-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+    
+      .profile-section p {
+        font-size: 1rem;
+        color: #666;
+      }
+    </style>
+
+
     <%- include("./partials/head") %>
     <%- include('./partials/navbarCss') %>
+    <%- include('./partials/blogcardCss') %>
+    <%- include('./partials/ProfileCss') %>
+   
     <title>Document</title>
   </head>
   <body>
+    
 
-    <%- include('./partials/navbar') %>
 
-   
+      <%- include('./partials/navbar') %>
 
-   <%- include('./partials/scripts') %>
+
+
+      <div class="main-container">
+        <!-- Left container for card space -->
+        <div class="left-container">
+          <div class="card-grid-container">
+            <!-- Add your cards here -->
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+             <%- include('./partials/blogCard') %>
+          </div>
+        </div>
+      
+        <!-- Right container for profile -->
+        <div class="right-container">
+          <div class="profile-section">
+            <h3>See What other Shared</h3>
+
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/default.png" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/sky.jpg" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+            
+            
+         
+        </div>
+      </div>
+      
+     
+  
+     <%- include('./partials/scripts') %>
+
+
+
+    
   </body>
 </html>

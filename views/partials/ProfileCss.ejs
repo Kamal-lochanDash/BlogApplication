@@ -1,0 +1,47 @@
+<style>
+  /* Profile card style */
+  .profile-card {
+    display: flex;
+    align-items: center; /* Align image and text side by side */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 350px; /* Wider profile card */
+    margin-bottom: 1rem; /* Space between profile cards */
+    text-decoration: none; /* Remove default link styling */
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+
+  .profile-card:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+
+  /* Square profile image with curved corners */
+  .profile-image {
+    width: 65px; /* Set width of the square image */
+    height: 65px; /* Set height of the square image */
+    border-radius: 50px; /* Curved corners */
+    object-fit: cover; /* Crop the image to fit the square */
+    margin-right: 1rem; /* Space between image and profile details */
+  }
+
+  /* Profile info section */
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    text-align: left; /* Left align text */
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-bio {
+    font-size: 1rem;
+    color: #666;
+  }
+</style>
