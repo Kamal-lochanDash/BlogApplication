@@ -4,7 +4,12 @@
 
     <style>
       /* Main container for the grid and profile section */
+      html, body {
+  height: 100%; /* Ensure the body takes up full height */
+  margin: 0;
+}
       .main-container {
+        height: 100vh;
         display: grid;
         grid-template-columns: 70% 30%; /* Left: 70%, Right: 30% */
         gap: 0.5rem; /* Space between columns */
@@ -13,10 +18,29 @@
     
       /* Left container for card space */
       .left-container {
+        max-height: 100%; /* Restrict height */
+        overflow-y: auto; /* Enable vertical scrolling */
         background-color: #f9f9f9;
         border-radius: 8px;
         padding: 1rem;
+
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For Internet Explorer and Edge */
       }
+
+
+      .left-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+
+      .left-container, .right-container {
+  max-height: 100%; /* Restrict height to the container's height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #f9f9f9; /* Maintain styling */
+  border-radius: 8px;
+  padding: 1rem;
+}
     
       .card-grid-container {
         display: grid;
@@ -125,6 +149,44 @@
               </div>
             </a>
             
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/sky.jpg" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+
+
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/sky.jpg" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+
+
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/sky.jpg" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
+
+
+
+            <a href="profile-link.html" class="profile-card">
+              <img src="/Images/sky.jpg" alt="Profile Picture" class="profile-image" />
+              <div class="profile-info">
+                <h4 class="profile-name">John Doe</h4>
+                <p class="profile-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </a>
             
          
         </div>
